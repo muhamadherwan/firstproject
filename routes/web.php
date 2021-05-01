@@ -19,26 +19,4 @@ Route::get('/', function () {
 });
 
 
-// route that send back a string
-// Route::get('/users', function() {
-//     return 'welcome to user page';
-// });
-
-// route to users - array(JSON) 
-// Route::get('/users', function(){
-//     return ['PHP', 'HTML', 'LARAVEL'];
-// });
-
-// route to users - JSON object
-// Route::get('users/', function(){
-//     return response()->json([
-//         'name' => 'CodeNinja',
-//         'course' => 'daigo saito',
-//     ]);
-// });
-
-// // route to users - function
-// Route::get('users/', function () {
-//     return redirect('/');
-// });
 
