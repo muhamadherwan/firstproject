@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ProductsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// route that send back a view
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/products', [ProductsController::class, 'index']);
+Route::get('/about', [ProductsController::class, 'about']);
 
 
 
