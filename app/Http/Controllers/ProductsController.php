@@ -16,18 +16,26 @@ class ProductsController extends Controller
             'productTwo' => 'Samsung'
         ];
 
-        // compact method
-        // return view('products.index', 
-        // compact('title', 'desc'));
-
-        // return directly in view
-        // return view('products.index', [
-        //     'data' => $data
-        // ]);
-
         // with method
         return view('products.index')->with('data', $data);
 
+    }
+
+    // show
+    // public function show($id){
+    //     return view('products.show')->with('id', $id);
+    // }
+
+    public function show($name){
+        
+        $data = [
+            'iphone' => 'iPhone',
+            'samsung' => 'Samsung'
+        ];
+
+        return view('products.index', [
+            'products' => $data[$name] ?? 'Product' . $name . 'does not exist'
+        ]);
     }
 
     // about
