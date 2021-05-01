@@ -8,16 +8,10 @@ class ProductsController extends Controller
 {
     // index
     public function index(){
-        $title = "Welcome Code Ninja";
-        $desc = "move fast break things";
-        
-        $data = [
-            'productOne' => 'iPhone',
-            'productTwo' => 'Samsung'
-        ];
 
-        // with method
-        return view('products.index')->with('data', $data);
+        print_r(route('products'));
+        
+        return view('products.index');
 
     }
 
