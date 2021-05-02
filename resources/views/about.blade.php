@@ -1,36 +1,24 @@
-{{-- @if (5 > 10)
-    <p>5 is less then 10</p>
-@elseif ( 5 == 10 )
-    <p>5 is indeed less then 10</p>
-@else
-<h2>all condition is wrong!</h2>
-@endif
+<!-- for loop -->
+@for ($i = 0; $i <= 10; $i++)
+    <h2>The number is {{ $i }}</h2>
+@endfor
 
-@unless (empty($name))
-    name is not empty  <br>  
-@endunless
+<!-- foreach loop -->
+@foreach ($names as $name)
+    <h2>{{ $name }}</h2>
+@endforeach
 
-@empty($secondName)
-    <h2>name is empty</h2>
-@endempty
+<!-- for else loop -->
+@forelse ($names as $name)
+    <h2>{{ $name }}</h2>
+@empty
+<h2>There are no names!</h2>
+@endforelse
 
-@isset($name)
-    <h2>name has been set</h2>
-@endisset
+<!-- while loop -->
+{{ $i = 0 }}
+@while ($i < 10)
 
- --}}
-
- <!--
-    comparing multiple value with switch
- -->
-
- @switch($name)
-     @case('daigo')
-         <h2>name is daigo</h2>
-         @break
-     @case('taylor')
-         <h2>name is taylor</h2>
-         @break
-     @default
-         <h2>no match found!</h2>
- @endswitch
+{{ $i++ }}
+    
+@endwhile
